@@ -15,8 +15,8 @@ from langchain.prompts import PromptTemplate # 프롬프트 템플릿 추가
 # .env 로드
 load_dotenv()
 
-st.set_page_config(page_title="Hybrid RAG Chatbot with Multi-Query", page_icon="🤖")
-st.title("🤖 Hybrid RAG Chatbot with Multi-Query")
+st.set_page_config(page_title="Hybrid RAG Chatbot", page_icon="💬")
+st.title("💬 Hybrid RAG Chatbot")
 
 # 1. 무료 임베딩 모델 설정
 @st.cache_resource
