@@ -36,9 +36,10 @@ This project is a high-performance, cost-efficient RAG (Retrieval-Augmented Gene
 Create a \`.env\` file in the root directory and add your OpenRouter API key.
 
 **File: .env**
-\`\`\`env
+
+```env
 OPENAI_API_KEY=your_openrouter_api_key_here
-\`\`\`
+```
 
 ### 2. Installation (설치)
 
