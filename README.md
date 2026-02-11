@@ -58,8 +58,8 @@ streamlit run app.py
 ## 💡 How It Works (작동 원리)
 
 1. **Ingestion (데이터 주입):**
-   - Documents are split into chunks (900 chars) with 200-char overlap.
-   - 문서를 900자 단위로 자르고 200자씩 겹치게 하여 문맥을 보존합니다.
+   - Documents are split into chunks (1000 chars) with 200-char overlap.
+   - 문서를 1000자 단위로 자르고 200자씩 겹치게 하여 문맥을 보존합니다.
 
 2. **Multi-Query (질문 확장):**
    - LLM expands the user's question into 3-5 variations.
