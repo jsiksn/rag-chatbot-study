@@ -36,21 +36,22 @@ This project is a high-performance, cost-efficient RAG (Retrieval-Augmented Gene
 Create a \`.env\` file in the root directory and add your OpenRouter API key.
 
 **File: .env**
-\`\`\`env
+
+```env
 OPENAI_API_KEY=your_openrouter_api_key_here
-\`\`\`
+```
 
 ### 2. Installation (설치)
 
-\`\`\`bash
+```bash
 pip install streamlit langchain langchain-openai chromadb sentence-transformers pypdf docx2txt rank_bm25 python-dotenv
-\`\`\`
+```
 
 ### 3. Run (실행)
 
-\`\`\`bash
+```bash
 streamlit run app.py
-\`\`\`
+```
 
 ---
 
