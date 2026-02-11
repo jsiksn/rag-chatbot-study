@@ -43,15 +43,15 @@ OPENAI_API_KEY=your_openrouter_api_key_here
 
 ### 2. Installation (설치)
 
-\`\`\`bash
+```bash
 pip install streamlit langchain langchain-openai chromadb sentence-transformers pypdf docx2txt rank_bm25 python-dotenv
-\`\`\`
+```
 
 ### 3. Run (실행)
 
-\`\`\`bash
+```bash
 streamlit run app.py
-\`\`\`
+```
 
 ---
 
