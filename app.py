@@ -1,4 +1,5 @@
 import streamlit as st
+import gc
 import os
 import requests
 
@@ -70,7 +71,32 @@ embeddings = load_embeddings()
 # 2. 파일 업로드
 uploaded_file = st.file_uploader("Upload a document", type=['pdf', 'docx', 'txt'])
 
-if uploaded_file:
+
+# 2-1. 파일이 없을 때 (파일을 삭제했을 때)
+if uploaded_file is None:
+    # 지워야 할 데이터가 세션에 하나라도 남아있는지 확인
+    keys_to_clear = ["ensemble_retriever", "messages", "summary", "rel_analysis", "rel_map"]
+    any_deleted = False
+
+    for key in keys_to_clear:
+        if key in st.session_state:
+            del st.session_state[key]
+            any_deleted = True # 하나라도 지웠다면 체크
+    
+    if any_deleted:
+        gc.collect() 
+        st.rerun() # 지운 직후에만 딱 한 번 새로고침!
+
+# 2-2. 새로운 파일이 올라왔을 때
+else:
+    # 기존에 분석했던 데이터가 메모리에 남아있다면 미리 제거
+    clear_list = ["ensemble_retriever", "summary", "rel_analysis"]
+    for key in clear_list:
+        if key in st.session_state:
+            del st.session_state[key]
+    
+    gc.collect()
+
     with open(uploaded_file.name, "wb") as f:
         f.write(uploaded_file.getbuffer())
 
