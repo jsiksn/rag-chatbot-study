@@ -52,10 +52,15 @@ OSS_BASE_URL=your_endpoint_url
 ### 2. Installation (설치)
 
 ```bash
-python -m venv .venv
+# 1. Create Virtual Environment (가상환경 생성)
+python3 -m venv .venv  # Mac/Linux
+# python -m venv .venv  # Windows
+
+# 2. Activate Virtual Environment (가상환경 활성화)
 source .venv/bin/activate  # Mac/Linux
 # .venv\Scripts\activate  # Windows
 
+# 3. Install Dependencies (의존성 설치)
 pip install --upgrade pip
 pip install streamlit langchain langchain-openai langchain-community \
 chromadb sentence-transformers pypdf docx2txt rank_bm25 python-dotenv requests
